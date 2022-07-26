@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <title>CHS Robotics - Lessons</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- use jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <style>
+        div {
+            margin: 10px;
+        }
+        /* Let lessonsbar be on the left side of the screen, make sure its not bigger than the main */
+        .lessonsbar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 10%;
+            height: 90%;
+            /* make text in lessonsbar margin-left to make it look like a list */
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        /* Let main be on the right side of the screen, make sure its bigger than the lessonsbar */
+        /* the contents of main should be readable by the user and relative to the lessonsbar */
+        .main {
+            position: absolute;
+            left: 10%;
+            top: 0;
+            width: 80%;
+            height: 90%;
+        }
+        /* make lesson_button invisible by default */
+        .lesson_button {
+            display: none;
+        }
+        /* if device is mobile, make main full screen */
+        @media screen and (max-width: 600px) {
+            .main {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 95%;
+                height: 100%;
+                
+                /* text wraps automatically */
+                white-space: normal;
+            }
+        }
+ 
+
+    </style>
+    <body>
+        <!-- Make a hoverable column in the right side that contains the lesson links -->
+        <!-- The links are in html -->
+        <!-- add a clickable button on top for mobile to make lessonsbar visible -->
+        <button class="lesson_button">Lessons</button>
+        <div class="column lessonsbar">
+            <div class="lesson">
+                <a href="lesson1.html">Lesson 1</a>
+            </div>
+            <div class="lesson">
+                <a href="lesson2.html">Lesson 2</a>
+            </div>
+            <div class="lesson">
+                <a href="lesson3.html">Lesson 3</a>
+            </div>
+            <div class="lesson">
+                <a href="lesson4.html">Lesson 4</a>
+            </div>
+            <div class="lesson">
+                <a href="lesson5.html">Lesson 5</a>
+            </div>
+            <div class="lesson">
+                <a href="lesson6.html">Lesson 6</a>
+            </div>
+            <div class="lesson">
+                <a href="lesson7.html">Lesson 7</a>
+            </div>
+            <div class="lesson">
+                <a href="lesson8.html">Lesson 8</a>
+            </div>
+            <div class="lesson">
+                <a href="lesson9.html">Lesson 9</a>
+            </div>
+            <div class="lesson">
+                <a href="lesson10.html">Lesson 10</a>
+            </div>
+            <div class="lesson">
+                <a href="lesson11.html">Lesson 11</a>
+            </div>
+            <div class="lesson">
+                <a href="lesson12.html">Lesson 12</a>
+            </div>
+            <div class="lesson">
+                <a href="lesson13.html">Lesson 13</a>
+            </div>
+            <div class="lesson">
+                <a href="lesson14.html">Lesson 14</a>
+            </div>
+            <div class="lesson">
+                <a href="lesson15.html">Lesson 15</a>
+            </div>
+            <div class="lesson">
+                <a href="lesson16.html">Lesson 16</a>
+            </div>
+            <!-- stop -->
+        </div>
+        <!-- add the main body here containing the introduction -->
+        <div class="main">
+            <h1>Lessons</h1>
+            <p>
+                This is a list of all the lessons that we have available.
+            </p>
+            <p>
+                If you would like to learn more about a particular lesson, click on the link.
+            </p>
+        </div>
+        <script>
+            /* if mobile, when lesson_button is clicked, make lessonsbar visible and make lessons invisible by changing display */
+            /* do not use toggle, it will not work */
+            /* initialize jquery */
+            $(document).ready(function() {
+                $(".lesson_button").click(function() {
+                    $(".lessonsbar").toggle();
+                    $(".main").toggle();
+                });
+                /* set lessonsbar as invisible on mobile */
+                @media screen and (max-width: 600px) {
+                    $(".lessonsbar").hide();
+                }
+            });
+        </script>
+    </body>
+</html>
